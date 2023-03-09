@@ -6,8 +6,10 @@ export default class GalacticAge{
     this.jupiter = 11.86;
   }
   getMercuryAge() {
-  // const userAge = 23;
-  // newAge = userAge/this.mercury;
+  let userAge = 23;
+  const mercuryAge = userAge/this.mercury;
+  return mercuryAge;
+  
   }
 }
 

@@ -15,8 +15,8 @@ describe('GalacticAge', () => {
     expect(galacticAge.jupiter).toEqual(jupiter);
   });
   test('Should correctly convert earth age to mercury age', () => {
-    const newAge = (userAge/mercury);
-    console.log('Age', newAge);
-    expect(galacticAge.getMercuryAge()).toEqual(newAge);
+    const mercuryAge = (userAge/mercury);
+    console.log('Age', mercuryAge);
+    expect(galacticAge.getMercuryAge()).toEqual(mercuryAge);
   });
 })
