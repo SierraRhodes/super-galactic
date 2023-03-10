@@ -45,7 +45,7 @@ describe('GalacticAge', () => {
     const planets = [earth, mercury, venus, mars, jupiter];
     let pastYears = [];
     planets.forEach(function(planet,index) {
-      pastYears[index] = (userAge/planet) - (userOldAge/planet);
+      pastYears[index] = Number((userAge/planet) - (userOldAge/planet)).toFixed(2);
       // console.log(planetNames[index], pastYears[index]);
     });
     expect(galacticAge.getPastBirthday()).toEqual(pastYears);
@@ -55,8 +55,8 @@ describe('GalacticAge', () => {
     const planets = [earth, mercury, venus, mars, jupiter];
     let pastYears = [];
     planets.forEach(function(planet,index) {
-      pastYears[index] = (userFutureAge/planet) - (userAge/planet);
-      console.log(planetNames[index], pastYears[index]);
+      pastYears[index] = Number((userFutureAge/planet) - (userAge/planet)).toFixed(2);
+      // console.log(planetNames[index], pastYears[index]);
     });
     expect(galacticAge.getFutureBirthday()).toEqual(pastYears);
   });

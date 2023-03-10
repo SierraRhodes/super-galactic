@@ -27,21 +27,30 @@ export default class GalacticAge{
   return jupiterAge;
   }
   getPastBirthday(){
-  let userAge = 56;
-  let userOldAge = 43;
+   let userAge = 56;
+   let userOldAge = 43;
 
-  const planetNames = ['Earth', 'Mercury', 'Venus', 'Mars', 'Jupiter'];
-
-  const planets = [this.earth, this.mercury, this.venus, this.mars, this.jupiter];
-  let pastYears = [];
-  planets.forEach(function(planet, index) {
-    pastYears[index] = (userAge/planet) - (userOldAge/planet);
+   const planetNames = ['Earth', 'Mercury', 'Venus', 'Mars', 'Jupiter'];
+   const planets = [this.earth, this.mercury, this.venus, this.mars, this.jupiter];
+   let pastYears = [];
+   planets.forEach(function(planet, index) {
+    pastYears[index] = Number((userAge/planet) - (userOldAge/planet)).toFixed(2);
     console.log(pastYears[index] + " " + planetNames[index] + " " + "years have passed.");
     });
   return pastYears; 
   }
   getFutureBirthday(){
-    
+    let userAge = 56;
+    let userFutureAge = 61;
+
+    const planetNames = ['Earth','Mercury', 'Venus', 'Mars', 'Jupiter'];
+    const planets = [this.earth, this.mercury, this.venus, this.mars, this.jupiter];
+    let pastYears = [];
+    planets.forEach(function(planet,index) {
+      pastYears[index] = Number((userFutureAge/planet) - (userAge/planet)).toFixed(2);
+      console.log(pastYears[index] + " " + planetNames[index] + " " + "years have yet to pass.");
+    });
+    return pastYears;
   }
 }
 
