@@ -6,7 +6,8 @@ describe('GalacticAge', () => {
   const venus = .62;
   const mars = 1.88;
   const jupiter = 11.86;
-  let userAge = 23;
+  let userAge = 56;
+  let userOldAge = 43;
 
   const galacticAge = new GalacticAge(mercury, venus, mars, jupiter);
 
@@ -33,7 +34,17 @@ describe('GalacticAge', () => {
   });
   test('Should correctly convert earth age to Jupiter age', () => {
     const jupiterAge = (userAge/jupiter);
-    console.log("Jupiter Age", jupiterAge);
+    console.log('Jupiter Age', jupiterAge);
     expect(galacticAge.getJupiterAge()).toEqual(jupiterAge);
   })
+  test('Should correctly calculate how many years have passed since past birthday in Mercury years', () => {
+    const planetNames = ['Mercury', 'Venus', 'Mars', 'Jupiter'];
+    const planets = [mercury, venus, mars, jupiter];
+    let pastYears = [];
+    planets.forEach(function(planet,index) {
+      pastYears[index] = (userAge/planet) - (userOldAge/planet);
+      console.log(planetNames[index], pastYears[index]);
+    });
+    expect(galacticAge.getPastBirthday()).toEqual(pastYears);
+  });
 })
