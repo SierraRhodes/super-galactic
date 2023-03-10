@@ -25,6 +25,11 @@ describe('GalacticAge', () => {
     const venusAge = (userAge/venus);
     console.log('Venus Age', venusAge);
     expect(galacticAge.getVenusAge()).toEqual(venusAge);
+  });
+  test('Should correctly convert earth age to mars age', () => {
+    const marsAge = (userAge/mars);
+    console.log('Mars Age', marsAge);
+    expect(galacticAge.getMarsAge()).toEqual(marsAge);
 
   });
 })
