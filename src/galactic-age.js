@@ -9,7 +9,9 @@ export default class GalacticAge{
   let userAge = 23;
   const mercuryAge = userAge/this.mercury;
   return mercuryAge;
-  
+  }
+  getVenusAge(){
+    
   }
 }
 
