@@ -11,12 +11,14 @@ export default class GalacticAge{
   return mercuryAge;
   }
   getVenusAge(){
-  let userAge =23;
+  let userAge = 23;
   const venusAge = userAge/this.venus;
   return venusAge;
   }
   getMarsAge(){
-    
+  let userAge = 23;
+  const marsAge = userAge/this.mars;
+  return marsAge; 
   }
 }
 
