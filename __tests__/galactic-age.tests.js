@@ -9,6 +9,7 @@ describe('GalacticAge', () => {
   const jupiter = 11.86;
   let userAge = 56;
   let userOldAge = 43;
+  let userFutureAge = 61;
 
   const galacticAge = new GalacticAge(earth, mercury, venus, mars, jupiter);
 
@@ -48,5 +49,15 @@ describe('GalacticAge', () => {
       // console.log(planetNames[index], pastYears[index]);
     });
     expect(galacticAge.getPastBirthday()).toEqual(pastYears);
+  });
+  test('Should correctly calculate how many years have yet to pass until a future birthday', () => {
+    const planetNames = ['Earth','Mercury', 'Venus', 'Mars', 'Jupiter'];
+    const planets = [earth, mercury, venus, mars, jupiter];
+    let pastYears = [];
+    planets.forEach(function(planet,index) {
+      pastYears[index] = (userFutureAge/planet) - (userAge/planet);
+      console.log(planetNames[index], pastYears[index]);
+    });
+    expect(galacticAge.getFutureBirthday()).toEqual(pastYears);
   });
 })

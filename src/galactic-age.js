@@ -39,7 +39,9 @@ export default class GalacticAge{
     console.log(pastYears[index] + " " + planetNames[index] + " " + "years have passed.");
     });
   return pastYears; 
-
+  }
+  getFutureBirthday(){
+    
   }
 }
 
