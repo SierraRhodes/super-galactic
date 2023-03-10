@@ -20,5 +20,8 @@ export default class GalacticAge{
   const marsAge = userAge/this.mars;
   return marsAge; 
   }
+  getJupiterAge(){
+    
+  }
 }
 

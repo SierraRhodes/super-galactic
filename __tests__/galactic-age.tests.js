@@ -16,20 +16,24 @@ describe('GalacticAge', () => {
     expect(galacticAge.mars).toEqual(mars);
     expect(galacticAge.jupiter).toEqual(jupiter);
   });
-  test('Should correctly convert earth age to mercury age', () => {
+  test('Should correctly convert earth age to Mercury age', () => {
     const mercuryAge = (userAge/mercury);
     console.log('Mercury Age', mercuryAge);
     expect(galacticAge.getMercuryAge()).toEqual(mercuryAge);
   });
-  test('Should correctly convert earth age to venus age', () => {
+  test('Should correctly convert earth age to Venus age', () => {
     const venusAge = (userAge/venus);
     console.log('Venus Age', venusAge);
     expect(galacticAge.getVenusAge()).toEqual(venusAge);
   });
-  test('Should correctly convert earth age to mars age', () => {
+  test('Should correctly convert earth age to Mars age', () => {
     const marsAge = (userAge/mars);
     console.log('Mars Age', marsAge);
     expect(galacticAge.getMarsAge()).toEqual(marsAge);
-
   });
+  test('Should correctly convert earth age to Jupiter age', () => {
+    const jupiterAge = (userAge/jupiter);
+    console.log("Jupiter Age", jupiterAge);
+    expect(galacticAge.getJupiterAge()).toEqual(jupiterAge);
+  })
 })
