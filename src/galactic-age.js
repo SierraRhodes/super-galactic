@@ -1,5 +1,6 @@
 export default class GalacticAge{
   constructor(){
+    this.earth = 1;
     this.mercury = .24;
     this.venus = .62;
     this.mars = 1.88;
@@ -26,6 +27,18 @@ export default class GalacticAge{
   return jupiterAge;
   }
   getPastBirthday(){
+  let userAge = 56;
+  let userOldAge = 43;
+
+  const planetNames = ['Earth', 'Mercury', 'Venus', 'Mars', 'Jupiter'];
+
+  const planets = [this.earth, this.mercury, this.venus, this.mars, this.jupiter];
+  let pastYears = [];
+  planets.forEach(function(planet, index) {
+    pastYears[index] = (userAge/planet) - (userOldAge/planet);
+    console.log(pastYears[index] + " " + planetNames[index] + " " + "years have passed.");
+    });
+  return pastYears; 
 
   }
 }

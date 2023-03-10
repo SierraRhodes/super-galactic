@@ -2,6 +2,7 @@ import GalacticAge from './../src/galactic-age.js';
 
 describe('GalacticAge', () => {
 
+  const earth = 1;
   const mercury = .24;
   const venus = .62;
   const mars = 1.88;
@@ -9,9 +10,10 @@ describe('GalacticAge', () => {
   let userAge = 56;
   let userOldAge = 43;
 
-  const galacticAge = new GalacticAge(mercury, venus, mars, jupiter);
+  const galacticAge = new GalacticAge(earth, mercury, venus, mars, jupiter);
 
   test('Should correctly create a galacticAge object with 4 different planets', () => {
+    expect(galacticAge.earth).toEqual(earth);
     expect(galacticAge.mercury).toEqual(mercury);
     expect(galacticAge.venus).toEqual(venus);
     expect(galacticAge.mars).toEqual(mars);
@@ -38,12 +40,12 @@ describe('GalacticAge', () => {
     expect(galacticAge.getJupiterAge()).toEqual(jupiterAge);
   })
   test('Should correctly calculate how many years have passed since past birthday in Mercury years', () => {
-    const planetNames = ['Mercury', 'Venus', 'Mars', 'Jupiter'];
-    const planets = [mercury, venus, mars, jupiter];
+    const planetNames = ['Earth','Mercury', 'Venus', 'Mars', 'Jupiter'];
+    const planets = [earth, mercury, venus, mars, jupiter];
     let pastYears = [];
     planets.forEach(function(planet,index) {
       pastYears[index] = (userAge/planet) - (userOldAge/planet);
-      console.log(planetNames[index], pastYears[index]);
+      // console.log(planetNames[index], pastYears[index]);
     });
     expect(galacticAge.getPastBirthday()).toEqual(pastYears);
   });
